@@ -23,6 +23,9 @@ def get_char_count(file_path):
 
     return char_dict
 
+def sort_on(dict):
+    return dict["num"]
+
 def sorted_list(dict):
     listed_dicts = []
 
@@ -34,4 +37,7 @@ def sorted_list(dict):
         temp_dict["num"] = dict[i]
         listed_dicts.append(temp_dict)
 
-    print(listed_dicts)
+    listed_dicts.sort(reverse=True, key=sort_on)
+    
+    for dict in listed_dicts:
+        print(f"{dict["char"]}: {dict["num"]}")
